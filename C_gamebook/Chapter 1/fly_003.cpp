@@ -3,10 +3,13 @@
 #include <windows.h>
 
 int main(){
-    int x=5,y=10;
-    int height=20,velocity=1;
+    int x=0,y=5;
+    int top=0,button=10;
+    int left=0,right=20;
+    int velocity_x=1,velocity_y=1;
     while(1){
-        x = x+velocity;
+        x = x+velocity_x;
+        y = y+velocity_y;
         system("cls");
         for(int i=0;i<x;i++){
             printf("\n");
@@ -16,12 +19,12 @@ int main(){
         }
         printf("o");
         printf("\n");
-        Sleep(50);
-        if(x==height){
-            velocity=-velocity;
+        Sleep(500);
+        if(x==top||x==button){
+            velocity_x=-velocity_x;
         }
-        if(x==0){
-            velocity=-velocity;
+        if(y==left||y==right){
+            velocity_y=-velocity_y;
         }
     }
     return 0;
